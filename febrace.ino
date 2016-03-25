@@ -59,30 +59,30 @@ void leituraBluetooth();
 
 void setup() {
 	timer.every(1000,leituraBluetooth);
-    bluetooth.begin(115200);
-    emon1.current(sensorCorrente, 60);
-    Wire.begin();
-    clockRTC.begin();
-    lcd.begin(16, 2);
-    if(!clockRTC.isrunning()) clockRTC.adjust(DateTime(__DATE__, __TIME__));
-    for(char x = 8; x <= 12; x++) pinMode(x, INPUT_PULLUP);
-    pinMode(carga, OUTPUT);
-    pinMode(buzzer, OUTPUT);
-    digitalWrite(carga, HIGH);
-    flagUP = false;
-    flagDown = false;
-    flagDefault = false;
-    flagOn = false;
-    flagVoltage = false;
+        bluetooth.begin(115200);
+        emon1.current(sensorCorrente, 60);
+        Wire.begin();
+        clockRTC.begin();
+        lcd.begin(16, 2);
+        if(!clockRTC.isrunning()) clockRTC.adjust(DateTime(__DATE__, __TIME__));
+        for(char x = 8; x <= 12; x++) pinMode(x, INPUT_PULLUP);
+       	pinMode(carga, OUTPUT);
+       	pinMode(buzzer, OUTPUT);
+       	digitalWrite(carga, HIGH);
+    	flagUP = false;
+    	flagDown = false;
+    	flagDefault = false;
+	flagOn = false;
+    	flagVoltage = false;
 }
 
 // --- Loop ---
 
 void loop() {
 	changeMenu();
-    exibirMenu();	
-    menuDefault();
-    timer.update();
+    	exibirMenu();	
+    	menuDefault();
+    	timer.update();
 }
 
 // --- Função p/ troca de menus ---
@@ -304,17 +304,17 @@ void menuDefault() {
 
 void leituraBluetooth() {
 	float leituraTemperatura = temp;
-    int leituraTensao = tensao;
-    float leituraCorrente = irms;
-    bluetooth.print("Temperatura (ºC): ");
-    bluetooth.println(leituraTemperatura);
-    bluetooth.print("Tensão (V): ");
-    bluetooth.println(leituraTensao);
-    bluetooth.print("Corrente (A): ");
-    if (leituraCorrente < 0.2) leituraCorrente = 0;
-    bluetooth.println(leituraCorrente);
-    bluetooth.print("Potência (W): ");
-    bluetooth.println(leituraTensao * leituraCorrente, 3);
+    	int leituraTensao = tensao;
+    	float leituraCorrente = irms;
+    	bluetooth.print("Temperatura (ºC): ");
+    	bluetooth.println(leituraTemperatura);
+    	bluetooth.print("Tensão (V): ");
+    	bluetooth.println(leituraTensao);
+    	bluetooth.print("Corrente (A): ");
+    	if (leituraCorrente < 0.2) leituraCorrente = 0;
+    	bluetooth.println(leituraCorrente);
+    	bluetooth.print("Potência (W): ");
+    	bluetooth.println(leituraTensao * leituraCorrente, 3);
 }
 
 
