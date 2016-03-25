@@ -155,7 +155,7 @@ void febrace() {
 void horaData() {
 	DateTime now = clockRTC.now();
 	lcd.setCursor(0, 0);
-    lcd.print("Data: ");
+    	lcd.print("Data: ");
 	lcd.print(now.day(), DEC);
 	lcd.print("/");
 	lcd.print(now.month(), DEC);
@@ -163,7 +163,7 @@ void horaData() {
 	lcd.print(now.year(), DEC);
 	lcd.print(" ");
 	lcd.setCursor(0, 1);
-    lcd.print("Hora: ");
+	 lcd.print("Hora: ");
   
 	if(now.hour() < 10) lcd.print("0");
 	lcd.print(now.hour(), DEC);
@@ -175,7 +175,7 @@ void horaData() {
 
 	if(now.second() < 10) lcd.print("0");
 	lcd.print(now.second(), DEC);
-    delay(25);
+	 delay(25);
 }
 
 // --- Acionamento carga por botão ou bluetooth ---
@@ -227,19 +227,19 @@ int voltage() {
 	}
 
 	if(set2 == 1) {
-    tensao = 110;
+		 tensao = 110;
 		lcd.setCursor(0, 1);
 		lcd.print("Tensao (V): ");
-    lcd.print(tensao);
-    return tensao;
+    		lcd.print(tensao);
+    		return tensao;
 	} 
 
 	else if(set2 == 2) {
 		tensao = 220;
 		lcd.setCursor(0, 1);
 		lcd.print("Tensao (V): ");
-    lcd.print(tensao);
-    return tensao;
+    		lcd.print(tensao);
+		 return tensao;
 	}   	
 }
 
