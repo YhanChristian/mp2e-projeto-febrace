@@ -163,7 +163,7 @@ void horaData() {
 	lcd.print(now.year(), DEC);
 	lcd.print(" ");
 	lcd.setCursor(0, 1);
-	 lcd.print("Hora: ");
+	lcd.print("Hora: ");
   
 	if(now.hour() < 10) lcd.print("0");
 	lcd.print(now.hour(), DEC);
