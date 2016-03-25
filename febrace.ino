@@ -195,17 +195,18 @@ void acionarCarga() {
 		digitalWrite(buzzer, LOW);
 		if(set1 > 2) set1 = 1;
 	}
-  switch (set1) {
-      case 1:
-        lcd.setCursor(0, 1);
-        lcd.print("Equipamento ON ");
-        digitalWrite(carga, LOW);
-        break;
-      case 2:
-        lcd.setCursor(0, 1);
-        lcd.print("Equipamento OFF");
-        digitalWrite(carga, HIGH);
-        break;
+	
+	switch (set1) {
+      		case 1:
+        	  lcd.setCursor(0, 1);
+                  lcd.print("Equipamento ON ");
+        	  digitalWrite(carga, LOW);
+        	break;
+      		case 2:
+        	  lcd.setCursor(0, 1);
+                  lcd.print("Equipamento OFF");
+		  digitalWrite(carga, HIGH);
+		 break;
   }
 }
 
